@@ -1,0 +1,219 @@
+/* ─── App Shell ───────────────────────────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────────────────────────── */
+.sidebar {
+  width: 256px;
+  min-height: 100vh;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 20px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), #60a5fa);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  flex-shrink: 0;
+}
+
+.logo-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.logo-tagline {
+  font-size: 0.7rem;
+  color: var(--text-3);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ─── Role Banner ─────────────────────────────────────────────────────────────── */
+.role-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 12px 12px;
+  padding: 7px 12px;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.role-banner-doctor {
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-muted);
+}
+
+.role-banner-patient {
+  background: var(--teal-light);
+  color: var(--teal);
+  border: 1px solid #a5f3fc;
+}
+
+.role-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s infinite;
+}
+
+/* ─── Navigation ──────────────────────────────────────────────────────────────── */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 12px;
+  gap: 2px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-2);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.nav-item:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.nav-item-active {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary-muted);
+  font-weight: 600;
+}
+
+.nav-icon { font-size: 1rem; width: 20px; text-align: center; flex-shrink: 0; }
+.nav-label { flex: 1; }
+
+/* ─── User Switcher ───────────────────────────────────────────────────────────── */
+.user-switcher {
+  position: relative;
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.user-profile-btn:hover { background: var(--bg); border-color: var(--text-3); }
+
+.user-info { flex: 1; text-align: left; overflow: hidden; }
+.user-name { font-size: 0.8125rem; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.user-role { font-size: 0.7rem; color: var(--text-3); }
+
+.chevron { font-size: 0.625rem; color: var(--text-3); }
+
+.role-picker {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 12px;
+  right: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: slideUp 0.15s ease;
+}
+
+.role-picker-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 14px 8px;
+}
+
+.role-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+  border-top: 1px solid var(--border);
+}
+.role-picker-item:hover { background: var(--surface-2); }
+.role-picker-item-active { background: var(--primary-light); }
+
+.picker-name { font-size: 0.8125rem; font-weight: 600; color: var(--text); }
+.picker-role { font-size: 0.7rem; color: var(--text-3); margin-top: 1px; }
+.picker-check { margin-left: auto; color: var(--primary); font-size: 0.875rem; font-weight: 700; }
+
+/* ─── Main Content ────────────────────────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+.content-area {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 32px;
+}
+
+@media (max-width: 900px) {
+  .content-area { padding: 24px 20px; }
+}
