@@ -1,4 +1,4 @@
-# Medeo Health Platform
+# RV Health Care Platform
 
 A full-stack healthcare platform connecting doctors and patients — prescriptions, diagnostics, live queue tracking, AI-powered results, secure messaging, and pharmacy routing. All in one elegant interface.
 

@@ -33,7 +33,7 @@ export default function Layout({
             <span>🏥</span>
           </div>
           <div>
-            <div className="logo-name">Medeo</div>
+            <div className="logo-name">RV Health Care</div>
             <div className="logo-tagline">Health Platform</div>
           </div>
         </div>

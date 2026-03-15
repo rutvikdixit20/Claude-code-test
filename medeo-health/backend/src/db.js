@@ -3,7 +3,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const db = new Database(join(__dirname, '../../medeo.db'));
+const db = new Database(join(__dirname, '../../rvhealthcare.db'));
 
 db.pragma('journal_mode = WAL');
 db.pragma('foreign_keys = ON');
@@ -108,10 +108,10 @@ if (userCount === 0) {
   const insertUser = db.prepare(
     'INSERT INTO users (name, role, email, specialty, initials) VALUES (?, ?, ?, ?, ?)'
   );
-  insertUser.run('Dr. Sarah Mitchell', 'doctor', 'sarah.mitchell@medeo.health', 'Family Medicine', 'SM');
-  insertUser.run('Dr. James Park', 'doctor', 'james.park@medeo.health', 'Radiology', 'JP');
-  insertUser.run('Emma Rodriguez', 'patient', 'emma.rodriguez@medeo.health', null, 'ER');
-  insertUser.run('Michael Chen', 'patient', 'michael.chen@medeo.health', null, 'MC');
+  insertUser.run('Dr. Sarah Mitchell', 'doctor', 'sarah.mitchell@rvhealthcare.com', 'Family Medicine', 'SM');
+  insertUser.run('Dr. James Park', 'doctor', 'james.park@rvhealthcare.com', 'Radiology', 'JP');
+  insertUser.run('Emma Rodriguez', 'patient', 'emma.rodriguez@rvhealthcare.com', null, 'ER');
+  insertUser.run('Michael Chen', 'patient', 'michael.chen@rvhealthcare.com', null, 'MC');
 
   // Pharmacies
   const insertPharmacy = db.prepare(
